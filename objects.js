@@ -6,10 +6,12 @@ Add a property named color and set it the name of any color.
 Add a property named size and set it to a number value between 0 and 20.
 Add a property named contents and set it to be an empty array.*/
 
+//Plain object and adding properties
+
 var plainBox = {
- color: 'red',
- size: 8,
- contents: []
+  color: 'red',
+  size: 8,
+  contents: []
 };
 
 console.log(plainBox);
@@ -22,7 +24,9 @@ add a key named automaticTransmission and give it a Boolean value of your choice
 add a key named driver and set it to be null.
 add a key named passengers and set it to be an empty array.*/
 
-var stockCar ={
+//An object with properties declared line by line
+
+var stockCar = {
   model: 'Ford',
   year: 2015,
   automaticTransmission: true,
@@ -43,22 +47,23 @@ The function will return the first parameter.
 
 Finally, invoke your new function while passing in the plainPerson object and additional agrument values, then store the return value. Use console.log three times to print the entire object, just the value at name, and just the value at age.*/
 
+//add new property inside a function
+
 var plainPerson = {};
 
 function buildPerson(person, nameString, age){
   person.name = nameString;
   person.age = age;
+
   return person;
 }
 
-var newPerson = buildPerson(plainPerson, "squishy", "23");
+var newPerson = buildPerson(plainPerson, "Squishy Worm", 50);
 console.log(newPerson);
 console.log(newPerson.name);
 console.log(newPerson.age);
 
 /*Declare a new variable named arrayOfObjects and set it to be this array of objects.
-
-Declare a new function named printProcessedOrdersand set one parameter called orders. Within this function you will use console.log to print order details to the page.
 
 Example output:*/
 
@@ -115,16 +120,20 @@ var arrayOfObjects = [
   }
 ];
 
+
+/*Declare a new function named printProcessedOrders and set one parameter called orders. Within this function you will use console.log to print order details to the page.*/
+
+//display values of objects that are inside an array
+
 function printProcessedOrders(orders){
   for(var i = 0; i<orders.length; i++){
-    console.log("=====");
+    console.log('=====');
     console.log('id: ' + orders[i].id);
     console.log('purchase date: ' + orders[i].date);
-    console.log('purchase price: ' + orders[i].total);
+    console.log('purchase total: ' + orders[i].total);
   }
 }
 printProcessedOrders(arrayOfObjects);
-
 
 /*Declare a new variable and set it to be a new object with the properties a, b, and result.
 
@@ -134,59 +143,63 @@ Invoke your function and pass in your object, store the result to a variable and
 
 Go ahead and create some more objects and pass them to this function. Have fun with it.*/
 
-var sumUp = {
-  a: 8,
-  b: 3,
+//addition with an object
+
+var addObject = {
+  a: 3,
+  b: 5,
   result: 0
 };
 
-function addProperties(object){
+function sumUp(object){
   object.result = object.a + object.b;
   return object;
 }
-console.log(addProperties(sumUp));
 
+console.log(sumUp(addObject));
 
-/*Declare a new function and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:
+/*Declare a new function and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:*/
 
 // if this object was passed into your function: { a: 10, b:67, result: 77 }
 // it should print a message saying
-'10 + 67 = 77'
-Before returning this object, add a new property to it named output and set it to be the message that was printed out.
+
+/*'10 + 67 = 77'*/
+/*Before returning this object, add a new property to it named output and set it to be the message that was printed out.
 
 Invoke this function and pass in your object. Further test by changing the values of the object being passed in or create more objects and invoke your function multiple times.*/
 
-function printSum(object){
+//print sum function and add as new key-value
+
+function printSum (object){
   console.log("'"+object.a + ' + ' + object.b + ' = ' + object.result+"'");
 }
-printSum(sumUp);
+printSum(addObject);
 
 /*Declare a function and a single parameter which will be an object. Within this function, write a FOR loop that adds 10 random number values to the array referenced at the contents property of the object being passed in. This function will return the object.
 
 Invoke your function and pass in your object (which should be plainBox), store the result to a variable and use console.log to inspect your results.*/
 
-
-//plainBox exercise #1
+//putting stuff in plainBox
 
 /*var plainBox = {
- color: 'red',
- size: 8,
- contents: []
+  color: 'red',
+  size: 8,
+  contents: []
 };
 
 console.log(plainBox);*/
 
-//getting random items from Math.floor(Math.random()*items;
-
-
-function puttingStuff(object2){
+function puttingStuff(object){
+  
   for(var i = 0; i<10; i++){
-    var randomNum = Math.floor(Math.random()*100);
+    var randomNum = Math.floor(Math.random()*50);
     plainBox.contents.push(randomNum);
   }
-  return object2;
+  return object;
 }
+
 console.log(puttingStuff(plainBox));
+
 
 /*Declare a function and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
 
@@ -194,7 +207,9 @@ If automaticTransmission is true then print a message saying so. Also, provide a
 
 Invoke your function and pass in your object, store the result to a variable and use console.log to inspect your results.*/
 
-/*var stockCar ={
+//detecting transmission
+//
+/*var stockCar = {
   model: 'Ford',
   year: 2015,
   automaticTransmission: true,
@@ -204,16 +219,15 @@ Invoke your function and pass in your object, store the result to a variable and
 
 console.log(stockCar);*/
 
-function myRide(anObject){
-if(anObject.automaticTransmission === true){
-  console.log('automatic baby');
-}else{
-  console.log('manual yo');
- }
- return anObject;
+function transmission(object){
+  if(object.automaticTransmission === true){
+    console.log("It's automatic, そばにいるだけで");
+  }else{
+    console.log('manual fool');
+  }
+  return object;
 }
-
-myRide(stockCar);
+transmission(stockCar);
 
 
 /*As you may have noticed that the stockCar doesn't have a driver!
@@ -222,28 +236,15 @@ Declare a function with two parameters. The first parameter will be an object wi
 
 Invoke your function and pass in your objects, store the result, and inspect your results. Consider using plainPerson as your driver.*/
 
-/*var plainPerson = {};
+//who's driving this thing?
 
-function buildPerson(person, nameString, age){
-  person.name = nameString;
-  person.age = age;
-  return person;
+function driving(car, person){
+  car.driver = person;
+  return car;
 }
 
-var newPerson = buildPerson(plainPerson, "squishy", "23");
-console.log(newPerson);
-console.log(newPerson.name);
-console.log(newPerson.age);*/
+console.log(driving(stockCar, plainPerson));
 
-function addDriver(car, person){
-  stockCar.driver = person;
-}
-
-addDriver(stockCar, plainPerson);
-console.log(stockCar);
-
-
-//final boss
 /*The Dev League instructors want to ride your whip!
 
 Declare a variable named passengerList and set it to be ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor']
@@ -258,51 +259,46 @@ You will have to populate the passengers array on the car object with proper obj
 
 You should iterate through the names and ages, pass the values to your buildPerson function to build person objects (remember that this function returns a new object). Don't forget that this function actually takes three arguments, how will you handle that? (you should not have to change your function).*/
 
-
-/*var stockCar ={
+//final boss
+//
+/*var stockCar = {
   model: 'Ford',
   year: 2015,
   automaticTransmission: true,
   driver: null,
   passengers: []
-};
+};*/
 
-console.log(stockCar);*/
-
-/*var plainPerson = {};
-
-function buildPerson(person, nameString, age){
+/*function buildPerson(person, nameString, age){
   person.name = nameString;
   person.age = age;
-  return person;
-}
 
-var newPerson = buildPerson(plainPerson, "squishy", "23");
-console.log(newPerson);
-console.log(newPerson.name);
-console.log(newPerson.age);*/
+  return person;
+}*/
 
 var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+
 var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
 
-function addRiders(car, names, ages){
+function daPosse(car, names, ages){
   for(var i = 0; i<names.length; i++){
     var riders = {};
     var myRiders = buildPerson(riders, names[i], ages[i]);
-    car.passengers.push(myRiders);
+    car.passengers.push(riders);
   }
   return car;
-} 
-
-console.log(addRiders(stockCar, passengerList, passengerAges));
-
-//display passengers
-
-function printRiders(car){
-  for(var i = 0; i<car.passengers.length; i++){
-   console.log("'"+car.passengers[i].name + ',' + ' age ' + car.passengers[i].age + ' is ridin dirty!'+"'");
-  }
-
 }
 
-printRiders(stockCar);
+console.log(daPosse(stockCar, passengerList, passengerAges));
+
+/*Delcare a function and set one parameter which will be a car. This function should print out each passenger's name and age one line at a time.*/
+
+function displayPassengers(car){
+  for(var i = 0; i<car.passengers.length; i++){
+    console.log("'"+car.passengers[i].name + ", " + 'age ' + car.passengers[i].age + ' is ridin dirty!');
+  }
+  return car;
+}
+
+displayPassengers(stockCar);
+
