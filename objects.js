@@ -8,11 +8,11 @@ Add a property named contents and set it to be an empty array.*/
 
 //Plain object and adding properties
 
-var plainBox = {
-  color: 'red',
-  size: 8,
-  contents: []
-};
+var plainBox = {};
+
+plainBox.color = 'orange';
+plainBox.size = Math.floor(Math.random()*20);
+plainBox.contents = [];
 
 console.log(plainBox);
 
@@ -35,6 +35,7 @@ var stockCar = {
 };
 
 console.log(stockCar);
+console.log('stockCar: ' + stockCar.model, stockCar.year, stockCar.automaticTransmission);
 
 /*Declare a variable named plainPerson. Set its value to be an empty object with no properties.
 
@@ -58,7 +59,7 @@ function buildPerson(person, nameString, age){
   return person;
 }
 
-var newPerson = buildPerson(plainPerson, "Squishy Worm", 50);
+var newPerson = buildPerson(plainPerson, "Squishy", 50);
 console.log(newPerson);
 console.log(newPerson.name);
 console.log(newPerson.age);
@@ -193,7 +194,7 @@ function puttingStuff(object){
   
   for(var i = 0; i<10; i++){
     var randomNum = Math.floor(Math.random()*50);
-    plainBox.contents.push(randomNum);
+    object.contents.push(randomNum);
   }
   return object;
 }
@@ -282,14 +283,16 @@ var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
 
 function daPosse(car, names, ages){
   for(var i = 0; i<names.length; i++){
+    console.log(names[i], ages[i]);
     var riders = {};
-    var myRiders = buildPerson(riders, names[i], ages[i]);
+    /*var myRiders = */buildPerson(riders, names[i], ages[i]);
     car.passengers.push(riders);
   }
   return car;
 }
 
 console.log(daPosse(stockCar, passengerList, passengerAges));
+
 
 /*Delcare a function and set one parameter which will be a car. This function should print out each passenger's name and age one line at a time.*/
 
@@ -301,4 +304,9 @@ function displayPassengers(car){
 }
 
 displayPassengers(stockCar);
+
+
+
+
+
 
