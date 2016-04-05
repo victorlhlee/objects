@@ -10,8 +10,8 @@ Add a property named contents and set it to be an empty array.*/
 
 var plainBox = {};
 
-plainBox.color = 'orange';
-plainBox.size = Math.floor(Math.random()*20);
+plainBox.color = 'green';
+plainBox.size = Math.floor(Math.random()*10);
 plainBox.contents = [];
 
 console.log(plainBox);
